@@ -1,27 +1,26 @@
 package library.interfaces;
 
-public interface IBorrowUI {
+public abstract interface IBorrowUI {
 
-	public void setState(EBorrowState state);
-	
-	public void displayMemberDetails(int memberID, String memberName, String memberPhone);
+    public abstract void setState(EBorrowState paramEBorrowState);
 
-	public void displayExistingLoan(String loanDetails);
+    public abstract void displayMemberDetails(int paramInt, String paramString1, String paramString2);
 
-	public void displayOverDueMessage();
-	
-	public void displayAtLoanLimitMessage();
-	
-	public void displayOutstandingFineMessage(float amountOwing);
+    public abstract void displayExistingLoan(String paramString);
 
-	public void displayOverFineLimitMessage(float amountOwing);
+    public abstract void displayOverDueMessage();
 
-	public void displayScannedBookDetails(String bookDetails);
+    public abstract void displayAtLoanLimitMessage();
 
-	public void displayPendingLoan(String loanDetails);
-	
-	public void displayConfirmingLoan(String loanDetails);
-	
-	public void displayErrorMessage(String errorMesg);
-	
+    public abstract void displayOutstandingFineMessage(float paramFloat);
+
+    public abstract void displayOverFineLimitMessage(float paramFloat);
+
+    public abstract void displayScannedBookDetails(String paramString);
+
+    public abstract void displayPendingLoan(String paramString);
+
+    public abstract void displayConfirmingLoan(String paramString);
+
+    public abstract void displayErrorMessage(String paramString);
 }
