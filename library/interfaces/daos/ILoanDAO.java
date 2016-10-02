@@ -2,30 +2,27 @@ package library.interfaces.daos;
 
 import java.util.Date;
 import java.util.List;
-
 import library.interfaces.entities.IBook;
 import library.interfaces.entities.ILoan;
 import library.interfaces.entities.IMember;
 
-public interface ILoanDAO {
-		
-	public ILoan createLoan(IMember borrower, IBook book);
+public abstract interface ILoanDAO {
 
-	public void commitLoan(ILoan loan);
-	
-	public ILoan getLoanByID(int id);
-	
-	public ILoan getLoanByBook(IBook book);
-	
-	public List<ILoan> listLoans();
-	
-	public List<ILoan> findLoansByBorrower(IMember borrower);
+    public abstract ILoan createLoan(IMember paramIMember, IBook paramIBook);
 
-	public List<ILoan> findLoansByBookTitle(String title);
-	
-	public void updateOverDueStatus(Date currentDate);
+    public abstract void commitLoan(ILoan paramILoan);
 
-	public List<ILoan> findOverDueLoans();
+    public abstract ILoan getLoanByID(int paramInt);
 
+    public abstract ILoan getLoanByBook(IBook paramIBook);
+
+    public abstract List<ILoan> listLoans();
+
+    public abstract List<ILoan> findLoansByBorrower(IMember paramIMember);
+
+    public abstract List<ILoan> findLoansByBookTitle(String paramString);
+
+    public abstract void updateOverDueStatus(Date paramDate);
+
+    public abstract List<ILoan> findOverDueLoans();
 }
-
