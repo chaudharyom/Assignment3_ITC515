@@ -1,7 +1,6 @@
 package library.interfaces.hardware;
 
-public interface IScannerListener {
-	
-	public void bookScanned(int barcode);
+public abstract interface IScannerListener {
 
+    public abstract void bookScanned(int paramInt);
 }
