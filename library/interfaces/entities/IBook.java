@@ -1,27 +1,26 @@
 package library.interfaces.entities;
 
-public interface IBook {
-	
-	public void borrow(ILoan loan);
-	
-	public ILoan getLoan();
-	
-	public void returnBook(boolean damaged);
-	
-	public void lose();
-	
-	public void repair();
-	
-	public void dispose();	
-	
-	public EBookState getState();
-	
-	public String getAuthor();
-	
-	public String getTitle();
-	
-	public String getCallNumber();
-	
-	public int getID();
+public abstract interface IBook {
 
+    public abstract void borrow(ILoan paramILoan);
+
+    public abstract ILoan getLoan();
+
+    public abstract void returnBook(boolean paramBoolean);
+
+    public abstract void lose();
+
+    public abstract void repair();
+
+    public abstract void dispose();
+
+    public abstract EBookState getState();
+
+    public abstract String getAuthor();
+
+    public abstract String getTitle();
+
+    public abstract String getCallNumber();
+
+    public abstract int getID();
 }
