@@ -1,47 +1,40 @@
 package library.hardware;
 
+import java.awt.Container;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.border.TitledBorder;
-
-import library.interfaces.hardware.IPrinter;
-
 import javax.swing.JTextArea;
+import javax.swing.border.TitledBorder;
+import library.interfaces.hardware.IPrinter;
 
 public class Printer extends JFrame implements IPrinter {
 
-	private static final long serialVersionUID = 1L;
-	private JTextArea textArea;
+    private static final long serialVersionUID = 1L;
+    private JTextArea textArea;
 
-	public Printer() {
+    public Printer() {
         setBounds(50, 450, 400, 350);
-		setResizable(false);
-		setTitle("Printer");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//getContentPane().setLayout(null);
-		
-		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(null, "Printer", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel.setBounds(10, 20, 400, 280);
-		getContentPane().add(panel);
-		panel.setLayout(null);
-		
+        setResizable(false);
+        setTitle("Printer");
+        setDefaultCloseOperation(3);
 
-		textArea = new JTextArea();
-		textArea.setEditable(false);
-		//textArea.setBounds(10, 20, 375, 280);
-		//textArea.setColumns(40);
-		//textArea.setRows(80);
-		
-		JScrollPane scrollPane = new JScrollPane(textArea);
-		scrollPane.setBounds(10, 20, 375, 280);
-		panel.add(scrollPane);
-	}
+        JPanel panel = new JPanel();
+        panel.setBorder(new TitledBorder(null, "Printer", 4, 2, null, null));
+        panel.setBounds(10, 20, 400, 280);
+        getContentPane().add(panel);
+        panel.setLayout(null);
 
-	@Override
-	public void print(String printData) {
-		textArea.setText(printData);
-		textArea.setCaretPosition(textArea.getLineCount());		
-	}
+        this.textArea = new JTextArea();
+        this.textArea.setEditable(false);
+
+        JScrollPane scrollPane = new JScrollPane(this.textArea);
+        scrollPane.setBounds(10, 20, 375, 280);
+        panel.add(scrollPane);
+    }
+
+    public void print(String printData) {
+        this.textArea.setText(printData);
+        this.textArea.setCaretPosition(this.textArea.getLineCount());
+    }
 }
