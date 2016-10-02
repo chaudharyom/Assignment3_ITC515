@@ -1,7 +1,6 @@
 package library.interfaces.hardware;
 
-public interface ICardReaderListener {
-	
-	public void cardSwiped(int cardData);
+public abstract interface ICardReaderListener {
 
+    public abstract void cardSwiped(int paramInt);
 }
