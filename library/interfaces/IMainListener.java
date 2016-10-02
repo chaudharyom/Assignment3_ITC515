@@ -1,7 +1,6 @@
 package library.interfaces;
 
-public interface IMainListener {
+public abstract interface IMainListener {
 
-	public void borrowBooks();
-
+    public abstract void borrowBooks();
 }
