@@ -1,9 +1,8 @@
 package library.interfaces.hardware;
 
-public interface ICardReader {
-	
-	public void addListener(ICardReaderListener listener);
+public abstract interface ICardReader {
 
-	public void setEnabled(boolean enabled);
+    public abstract void addListener(ICardReaderListener paramICardReaderListener);
 
+    public abstract void setEnabled(boolean paramBoolean);
 }
