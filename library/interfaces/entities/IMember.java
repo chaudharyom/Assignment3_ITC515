@@ -2,44 +2,40 @@ package library.interfaces.entities;
 
 import java.util.List;
 
-public interface IMember {
-	
-	public static final int   LOAN_LIMIT = 5;
-	
-	public static final float FINE_LIMIT = 10.0f;	
-	
-	
-	public boolean hasOverDueLoans();
-	
-	public boolean hasReachedLoanLimit();
-	
-	public boolean hasFinesPayable();
-	
-	public boolean hasReachedFineLimit();
-	
-	public float   getFineAmount();
-	
-	public void    addFine(float fine);
+public abstract interface IMember {
 
-	public void    payFine(float payment);
-	
-	public void    addLoan(ILoan loan);
-	
-	public List<ILoan> getLoans();
-	
-	public void    removeLoan(ILoan loan);
-	
-	public EMemberState   getState();
-	
-	public String  getFirstName();
-	
-	public String  getLastName();
-	
-	public String  getContactPhone();
-	
-	public String  getEmailAddress();
-	
-	public int     getID();
-	
+    public static final int LOAN_LIMIT = 5;
+    public static final float FINE_LIMIT = 10.0F;
 
+    public abstract boolean hasOverDueLoans();
+
+    public abstract boolean hasReachedLoanLimit();
+
+    public abstract boolean hasFinesPayable();
+
+    public abstract boolean hasReachedFineLimit();
+
+    public abstract float getFineAmount();
+
+    public abstract void addFine(float paramFloat);
+
+    public abstract void payFine(float paramFloat);
+
+    public abstract void addLoan(ILoan paramILoan);
+
+    public abstract List<ILoan> getLoans();
+
+    public abstract void removeLoan(ILoan paramILoan);
+
+    public abstract EMemberState getState();
+
+    public abstract String getFirstName();
+
+    public abstract String getLastName();
+
+    public abstract String getContactPhone();
+
+    public abstract String getEmailAddress();
+
+    public abstract int getID();
 }
